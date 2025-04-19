@@ -15,9 +15,11 @@ public class EmployeeService {
                 if (ageCompares !=0) {
                     return ageCompares;
                 }
-                return Integer.compare(o1.getAge(), o2.getAge());
+                return String.compare(o1.getName(), o2.getName());
             }
         };
-        return Set.of();
+        Set<Employee> employee = new TreeSet<>(employeeComparator);
+
+        return employee;
     }
 }
